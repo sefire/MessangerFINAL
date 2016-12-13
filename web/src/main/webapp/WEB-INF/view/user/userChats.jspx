@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:jsp="http://java.sun.com/JSP/Page"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+      xmlns:spring="http://www.springframework.org/tags">
+
+<jsp:directive.page pageEncoding="UTF-8" contentType="text/html; UTF-8"/>
+<head>
+    <title><spring:message code="page.login.title"/></title>
+    <!--    ${currentUserPhoneNumber}-->
+</head>
+
+<body>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <h1>${user} Chats</h1>
+            <br>
+            </br>
+            <thead>
+            <tr>
+                <th>User Id</th>
+                <th>Chat Id</th>
+                <th>Users</th>
+                <th>Last Time</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <c:forEach var="chatEntity" items="${userChatsList}">
+                <tr>
+                    <td><c:out value="${ idCurrentUser }"/></td>
+                    <td><c:out value="${ chatEntity.getId() }"/></td>
+
+                    <c:forEach var="userEntity" items="${chatEntity.getUserEntities()}">
+                        <c:if test="${idCurrentUser !=  userEntity.getId()  }">
+                            <td>
+                                <c:out value="${ userEntity.getFirstName() } "/>
+                                <c:out value="${ userEntity.getLastName() }"/>
+                            </td>
+                        </c:if>
+                    </c:forEach>
+
+                    <td><fmt:setLocale value="ru-Ru"/>
+                        <fmt:timeZone value="GMT+3:00">
+                            <fmt:formatDate value="${chatEntity.getLastTimeMessage()}" type="both"
+                                            dateStyle="medium" timeStyle="medium"/><br/>
+                        </fmt:timeZone>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+</body>
+</html>
+

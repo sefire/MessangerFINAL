@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:jsp="http://java.sun.com/JSP/Page"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:spring="http://www.springframework.org/tags">
+
+<jsp:directive.page pageEncoding="UTF-8" contentType="text/html; UTF-8"/>
+<head>
+    <title><spring:message code="page.login.title"/></title>
+    <!--    ${currentUserPhoneNumber}-->
+</head>
+
+<body>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li>
+            <a href="${contextPath}/GETMYFRIENDS">My friends</a>
+        </li>
+        <li>
+            <a href="${contextPath}/GETMYCHATS">My chats</a>
+        </li>
+        <li>
+            <a href="${contextPath}/GETUSERSINFO">My Information</a>
+        </li>
+        <li>
+            <a href="${contextPath}/GETALLUSERS">All Users</a>
+        </li>
+        <li>
+            <a href="${contextPath}/USERSPAGINATION">All Users (on pages)</a>
+        </li>
+        <li>
+            <a href="${contextPath}/PRESEACH">Find friends</a>
+        </li>
+        <li>
+            <a href="${contextPath}/LOGOUT">Exit</a>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
+

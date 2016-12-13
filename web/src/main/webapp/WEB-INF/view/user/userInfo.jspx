@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:jsp="http://java.sun.com/JSP/Page"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+      xmlns:spring="http://www.springframework.org/tags">
+
+<jsp:directive.page pageEncoding="UTF-8" contentType="text/html; UTF-8"/>
+<head>
+    <title><spring:message code="page.login.title"/></title>
+    <!--    ${currentUserPhoneNumber}-->
+</head>
+
+<body>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<div class="container">
+    <div>
+        <table class="table table-striped">
+            <h1>User's information</h1>
+            <tbody>
+            <tr>
+                <td>Phone</td>
+                <td>${userEntity.getPhone()}</td>
+<!--<%&#45;&#45;                <td><a href="controller?command=CHANGEUSERFIELD&fieldToChange=phone">change</a><td>&#45;&#45;%>-->
+            </tr>
+            <tr>
+                <td>FirstName</td>
+                <td>${userEntity.getFirstName()}</td>
+<!--<%&#45;&#45;                <td><a href="controller?command=CHANGEUSERFIELD&fieldToChange=firstName">change</a><td>&#45;&#45;%>-->
+            </tr>
+            <tr>
+                <td>LastName</td>
+                <td>${userEntity.getLastName()}</td>
+<!--<%&#45;&#45;                <td><a href="controller?command=CHANGEUSERFIELD&fieldToChange=lastName">change</a><td>&#45;&#45;%>-->
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>${userEntity.getCountry()}</td>
+<!--<%&#45;&#45;                <td><a href="controller?command=CHANGEUSERFIELD&fieldToChange=country">change</a><td>&#45;&#45;%>-->
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>${userEntity.getCity()}</td>
+<!--<%&#45;&#45;                <td><a href="controller?command=CHANGEUSERFIELD&fieldToChange=city">change</a><td>&#45;&#45;%>-->
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td>${userEntity.getAge()}</td>
+<!--<%&#45;&#45;                <td><a href="controller?command=CHANGEUSERFIELD&param=age">change</a><td>&#45;&#45;%>-->
+            </tr>
+            <tr>
+            <td>Password</td>
+            <td>${userEntity.getPassword()}</td>
+<!--                <%&#45;&#45;<td><a href="controller?command=CHANGEUSERFIELD&fieldToChange=password">change</a><td>&#45;&#45;%>-->
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

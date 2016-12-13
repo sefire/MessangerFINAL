@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+    <definition name="default" template="/WEB-INF/view/layout/default.jspx">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="header" value="/WEB-INF/view/common/header.jspx"/>
+        <put-attribute name="menu" value="/WEB-INF/view/common/menu.jspx"/>
+        <put-attribute name="body" value=""/>
+    </definition>
+
+    <definition name="login" extends="default">
+        <put-attribute name="menu" value=""/>
+        <put-attribute name="body"  value="/WEB-INF/view/user/login.jspx"/>
+    </definition>
+
+    <definition name="registrationform" extends="default">
+        <put-attribute name="menu" value=""/>
+        <put-attribute name="body"  value="/WEB-INF/view/user/registrationForm.jspx"/>
+    </definition>
+
+    <definition name="main" extends="default">
+        <put-attribute name="body"  value="/WEB-INF/view/user/main.jspx"/>
+    </definition>
+
+    <definition name="userFriends" extends="default">
+        <put-attribute name="body"  value="/WEB-INF/view/user/userFriends.jspx"/>
+    </definition>
+
+    <definition name="userChats" extends="default">
+        <put-attribute name="body"  value="/WEB-INF/view/user/userChats.jspx"/>
+    </definition>
+
+    <definition name="userInfo" extends="default">
+        <put-attribute name="body"  value="/WEB-INF/view/user/userInfo.jspx"/>
+    </definition>
+
+    <definition name="allUsers" extends="default">
+        <put-attribute name="body"  value="/WEB-INF/view/user/allUsers.jspx"/>
+    </definition>
+
+    <definition name="findUser" extends="default">
+        <put-attribute name="body"  value="/WEB-INF/view/user/findUser.jspx"/>
+    </definition>
+
+    <definition name="smbspage" extends="default">
+        <put-attribute name="body"  value="/WEB-INF/view/user/somebodysPage.jspx"/>
+    </definition>
+
+    <definition name="userPagination" extends="default">
+        <put-attribute name="body"  value="/WEB-INF/view/user/allUsersPagination.jspx"/>
+    </definition>
+
+</tiles-definitions>
+

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:jsp="http://java.sun.com/JSP/Page"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:spring="http://www.springframework.org/tags"
+      xmlns:form="http://www.springframework.org/tags/form">
+
+<jsp:directive.page pageEncoding="UTF-8" contentType="text/html; UTF-8"/>
+<head>
+    <title><spring:message code="page.login.title"/></title>
+</head>
+
+<body>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+<div class="container">
+    <div class="col-md-9">
+        <div class="container">
+            <div>
+                <table class="table table-striped">
+                    <h1>${anyUser.getFirstName()} ${anyUser.getLastName()}</h1>
+                    <br></br>
+                    <tbody>
+                    <tr>
+                        <td>Phone</td>
+                        <td>${anyUser.getPhone()}</td>
+                    </tr>
+                    <tr>
+                        <td>FirstName</td>
+                        <td>${anyUser.getFirstName()}</td>
+                    </tr>
+                    <tr>
+                        <td>LastName</td>
+                        <td>${anyUser.getLastName()}</td>
+                    </tr>
+                    <tr>
+                        <td>Country</td>
+                        <td>${anyUser.getCountry()}</td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td>${anyUser.getCity()}</td>
+                    </tr>
+                    <tr>
+                        <td>Age</td>
+                        <td>${anyUser.getAge()}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <c:if test="${isItFriend ne true}">
+                    <form:form name="addToFriends" method="POST" action="controller">
+                        <input type="hidden" name="command" value="ADDTOFRIENDS"/>
+                        <input type="hidden" name="userFriendId" value="${anyUser.getId()}"/>
+                        <input type="hidden" name="fromPage" value="/jsp/somebodysPage.jsp"/>
+                        <input type="submit" value="Add to friends"/>
+                        <br></br>
+                    </form:form>
+                </c:if>
+
+                <c:if test="${isItFriend eq true}">
+                    <form:form name="deleteFromFriends" method="POST" action="controller">
+                        <input type="hidden" name="command" value="DELETEFROMFRIENDS"/>
+                        <input type="hidden" name="userFriendId" value="${anyUser.getId()}"/>
+                        <input type="hidden" name="fromPage" value="/jsp/somebodysPage.jsp"/>
+                        <input type="submit" value="Delete from friends"/>
+                        <br></br>
+                    </form:form>
+                </c:if>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

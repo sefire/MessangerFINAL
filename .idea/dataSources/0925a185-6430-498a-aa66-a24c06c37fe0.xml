@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="hibernate.cfg.xml/Hibernate">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="messengerdb2">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="hiberanndb"/>
+    <schema id="3" name="hibercridb"/>
+    <schema id="4" name="hiberhqldb"/>
+    <schema id="5" name="hibertrydb"/>
+    <schema id="6" name="information_schema"/>
+    <schema id="7" name="m"/>
+    <schema id="8" name="messengerdb"/>
+    <schema id="9" name="mvc_person"/>
+    <schema id="10" name="mydbfirst"/>
+    <schema id="11" name="mysql"/>
+    <schema id="12" name="performance_schema"/>
+    <schema id="13" name="sakila"/>
+    <schema id="14" name="sys"/>
+    <schema id="15" name="world"/>
+  </database-model>
+</dataSource>

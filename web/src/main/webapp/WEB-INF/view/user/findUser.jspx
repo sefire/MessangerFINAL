@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:jsp="http://java.sun.com/JSP/Page"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+      xmlns:spring="http://www.springframework.org/tags"
+      xmlns:form="http://www.springframework.org/tags/form">
+
+<jsp:directive.page pageEncoding="UTF-8" contentType="text/html; UTF-8"/>
+<head>
+    <title><spring:message code="page.login.title"/></title>
+    <!--    ${currentUserPhoneNumber}-->
+</head>
+
+<body>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+<div class="container">
+    <br/>
+    <br/>
+    <h1><spring:message code="page.findUser.header"/></h1>
+    <br/>
+    <br/>
+    <c:if test="${userNotFoundMessage != null}">
+        <div class="alert alert-danger">
+            <p>User wasn't found...</p>
+        </div>
+    </c:if>
+
+    <br/>
+
+    <form:form name="findUserByPhone" method="POST" action="findUser">
+        Phone: <br/>
+        <input type="text" name="phoneNumberToFind" value=""/>
+        <br/>
+        <br/>
+        <input type="submit" class="btn btn-primary" value="Find!"/>
+    </form:form>
+</div>
+
+</body>
+</html>

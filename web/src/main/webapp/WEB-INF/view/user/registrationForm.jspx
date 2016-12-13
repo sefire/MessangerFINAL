@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:jsp="http://java.sun.com/JSP/Page"
+      xmlns:spring="http://www.springframework.org/tags"
+      xmlns:form="http://www.springframework.org/tags/form">
+
+<jsp:directive.page pageEncoding="UTF-8" contentType="text/html; UTF-8"/>
+<head>
+    <title><spring:message code="page.registrationForm.title"/></title>
+</head>
+
+<body>
+
+
+<br/>
+<div class="container">
+    <h2><spring:message code="page.registrationForm.header"/></h2>
+<!--    <s:form  name="regForm" method="POST" action="passregistration" commandName="currentUser">
+        <fieldset>
+            <label for="phone">Phone number</label>
+            <s:input id="phone" type="text" value="" path="phone"/><br/>
+
+            <input type="submit" value="Let's start!"/>
+        </fieldset>
+    </s:form>-->
+
+
+    <form:form method="post" commandName="user" action="passRegistration" class="box Login"> <!--action="getUserById""-->
+        <fieldset class="boxBody">
+            Phone
+            <br/>
+            <form:label path="phone"/>
+            <form:input path="phone"/>
+<!--            <form:errors path="login" cssClass="error" />-->
+
+<!--            <form:label path="password">Password</form:label>
+            <form:input path="password"/>
+            <form:errors path="password" cssClass="error" />-->
+            <br/>
+            Name
+            <br/>
+            <form:label path="firstName"/>
+            <form:input path="firstName"/>
+            <br/>
+            Surname
+            <br/>
+            <form:label path="lastName"/>
+            <form:input path="lastName"/>
+            <br/>
+            Age
+            <br/>
+            <form:label path="age"/>
+            <form:input path="age"/>
+            <br/>
+            Country
+            <br/>
+            <form:label path="country"/>
+            <form:input path="country"/>
+            <br/>
+            City
+            <br/>
+            <form:label path="city"/>
+            <form:input path="city"/>
+            <br/>
+            Password
+            <br/>
+            <form:label path="password"/>
+            <form:password path="password"/>
+            <br/>
+            <br/>
+
+            <input type="submit" class="btn btn-default" value="Let's start!"/>
+        </fieldset>
+    </form:form>
+    <hr/>
+</div>
+
+
+</body>
+</html>
+

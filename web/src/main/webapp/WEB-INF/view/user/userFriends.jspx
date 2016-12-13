@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:jsp="http://java.sun.com/JSP/Page"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:spring="http://www.springframework.org/tags">
+
+<jsp:directive.page pageEncoding="UTF-8" contentType="text/html; UTF-8"/>
+<head>
+    <title><spring:message code="page.login.title"/></title>
+    <!--    ${currentUserPhoneNumber}-->
+</head>
+
+<body>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <h1>${user} Friends</h1>
+            <br>
+            </br>
+            <thead>
+            <tr>
+                <th>Phone</th>
+                <th>First Name</th>
+                <th>last Name</th>
+                <th>Country</th>
+                <th>City</th>
+                <th>Age</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach var="userEntity" items="${userFriendsList}">
+                <tr>
+<!--                        <%&#45;&#45;                <td><c:out value="${ userEntity.getId() }"/></td>&#45;&#45;%>-->
+                    <td><c:out value="${ userEntity.phone }"/></td>
+                    <td><c:out value="${ userEntity.firstName }"/></td>
+                    <td><c:out value="${ userEntity.lastName }"/></td>
+                    <td><c:out value="${ userEntity.country }"/></td>
+                    <td><c:out value="${ userEntity.city }"/></td>
+                    <td><c:out value="${ userEntity.age }"/></td>
+                    <td>
+<!--                        <form name="deleteFromFriends" method="POST" action="controller">
+                            <input type="hidden" name="command" value="DELETEFROMFRIENDS"/>
+                            <input type="hidden" name="userFriendId" value="${userEntity.getId()}" }/>
+                            <input type="hidden" name="fromPage" value="/jsp/userFriends.jsp" }/>
+                            <input type="submit" value="Delete from friends"/>
+                            </br>
+                        </form>-->
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
